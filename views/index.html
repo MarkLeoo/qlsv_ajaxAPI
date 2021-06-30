@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center display-4 my-5">Quản lý sinh viên</h3>
+        <div class="form-group">
+            <label for="maSinhVien">Mã sinh viên</label>
+            <input type="text" class="form-control" id="maSinhVien">
+            <p class="text-danger" id="err__maSinhVien__ktRong"></p>
+        </div>
+        <div class="form-group">
+            <label for="tenSinhVien">Tên sinh viên</label>
+            <input type="text" class="form-control" id="tenSinhVien">
+            <p class="text-danger" id="err__tenSinhVien__ktRong"></p>
+            <p class="text-danger" id="err__tenSinhVien__ktChu"></p>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email">
+            <p class="text-danger" id="err__email__ktRong"></p>
+            <p class="text-danger" id="err__email__ktFormat"></p>
+        </div>
+        <div class="form-group">
+            <label for="loaiSinhVien">Loại sinh viên</label>
+            <select id="loaiSinhVien" class="form-control">
+                <option>Khó khăn</option>
+                <option>Bình thường</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="diemToan">Điểm toán</label>
+                    <input type="text" class="form-control" id="diemToan">
+                    <p class="text-danger" id="err__diemToan__ktRong"></p>
+                    <p class="text-danger" id="err__diemToan__ktSo"></p>
+                </div>
+                <div class="col-md-4">
+                    <label for="diemLy">Điểm lý</label>
+                    <input type="text" class="form-control" id="diemLy">
+                    <p class="text-danger" id="err__diemLy__ktRong"></p>
+                    <p class="text-danger" id="err__diemLy__ktSo"></p>
+                </div>
+                <div class="col-md-4">
+                    <label for="diemHoa">Điểm hoá</label>
+                    <input type="text" class="form-control" id="diemHoa">
+                    <p class="text-danger" id="err__diemHoa__ktRong"></p>
+                    <p class="text-danger" id="err__diemHoa__ktSo"></p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="diemRenLuyen">Điểm rèn luyện</label>
+            <input type="text" class="form-control" id="diemRenLuyen">
+            <p class="text-danger" id="err__diemRenLuyen__ktRong"></p>
+            <p class="text-danger" id="err__diemRenLuyen__ktSo"></p>
+        </div>
+        <div class="form-group text-center my-5">
+            <button class="btn btn-success" id="btnThemSinhVien">Thêm sinh viên</button>
+            <button class="btn btn-info" id="btnCapNhatSinhVien">Cập nhật sinh viên</button>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Mã sv</th>
+                    <th>Tên sv</th>
+                    <th>Email</th>
+                    <th>Loại sv</th>
+                    <th>Điểm RL</th>
+                    <th>Điểm TB</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="renderContent">
+
+            </tbody>
+        </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+        integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+        crossorigin="anonymous"></script>
+    <script src="../models/SinhVien.js"></script>
+    <script src="../models/Validation.js"></script>
+    <!-- <script src="../controllers/index.js"></script> -->
+    <script src="../services/SinhVienServices.js"></script>
+    <script src="../controllers/indexAjax.js"></script>
+</body>
+
+</html>
